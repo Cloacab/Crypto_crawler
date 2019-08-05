@@ -24,6 +24,7 @@ async def fetch_ticker_asinc(ticker = None):
     data = (await binance.fetch_ohlcv(symbol = ticker, timeframe = '1m', since = int(time.time()*1000) - time_period*3600000))
     return data
 
+ioloop = asyncio.get_event_loop()
 
 print('Connecting to binance exchange...\n')
 binance = ccxt.binance()
